@@ -24,7 +24,7 @@ class TaskManager:
             print(f"Task {index}: {task}")
 
     def delete_task(self, index):
-        if self.tasks:
+        if 0 <= index < len(self.tasks):
             self.tasks.pop(0)
             self.save_tasks()
 
