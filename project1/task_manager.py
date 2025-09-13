@@ -28,3 +28,7 @@ class TaskManager:
             self.tasks.pop(0)
             self.save_tasks()
 
+    def complete_task(self, index):
+	if 0 <= index < len(self.tasks):
+	    self.tasks[index] += " ✅"
+	    self.save_tasks()
