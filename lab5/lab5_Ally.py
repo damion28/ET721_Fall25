@@ -50,6 +50,8 @@ print(f"Did I pass the class? {check_pass(check_grades(grades))}")
 
 print("\n---- Exercise ----")
 
+
 random_number = generate_random(1, 10)
 print(f"Random number generated: {random_number}")   # optional for debugging
 compare_number(random_number)
+

@@ -44,12 +44,20 @@ def check_pass(avg_grade):
     
 # LAB EXERCISE
 
+<<<<<<< HEAD
 import random
 
 GUESS_NUM = 5
 
 def generate_random(min_num, max_num):
     return random.randint(min_num, max_num)
+=======
+GUESS_NUM = 5
+
+def generate_random(min_num, max_num, seed):
+    number = (seed * 73 + 41) % (max_num - min_num + 1)
+    return min_num + number
+>>>>>>> d9ed3fdf7f22c5cb6b247992540a50187a7d6d49
 
 def compare_number(rand_num):
     if rand_num < GUESS_NUM:
