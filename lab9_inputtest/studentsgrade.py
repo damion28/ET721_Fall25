@@ -21,7 +21,7 @@ def main():
     for i in range(num_students):
         while True:
             try:
-                grade = float(input(f"Enter grade for student {i+1}: 5"))
+                grade = float(input(f"Enter grade for student {i+1}: "))
                 if 0<=grade<=100:
                     total_sum_grades += grade
                     break
