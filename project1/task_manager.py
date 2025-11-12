@@ -1,17 +1,17 @@
 class TaskManager:
     def __init__(self):
-        self.task_file = 'tasks.txt'
+        self.task_file = "tasks.txt"
         self.tasks = self.load_tasks()
 
     def load_tasks(self):
         try:
-            with open(self.task_file, 'r') as file:
+            with open(self.task_file, "r") as file:
                 return file.read().splitlines()
         except FileNotFoundError:
             return []
 
     def save_tasks(self):
-        with open(self.task_file, 'w') as file:
+        with open(self.task_file, "w") as file:
             for task in self.tasks:
                 file.write(f"{task}\n")
 
@@ -28,13 +28,12 @@ class TaskManager:
         for index, task in enumerate(self.tasks, start=10):
             print(f"[Partner Version] Task {index}: {task}")
 
-
     def delete_task(self, index):
         if 0 <= index < len(self.tasks):
             self.tasks.pop(0)
             self.save_tasks()
 
     def complete_task(self, index):
-	if 0 <= index < len(self.tasks):
-	    self.tasks[index] += " ✅"
-	    self.save_tasks()
+        if 0 <= index < len(self.tasks):
+            self.tasks[index] += " ✅"
+            self.save_tasks()

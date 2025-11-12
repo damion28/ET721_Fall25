@@ -3,19 +3,25 @@ Damion Ally
 10/17/2025
 lab 10
 """
+
+
 def write_file(filename, msg):
     with open(filename, "w") as file:
         file.write(msg)
+
 
 def read_file(filename):
     with open(filename, "r") as file:
         file.readlines()
 
+
 def append_file(filename):
     with open(filename, "a") as file:
         file.write("\nNew line added.")
 
+
 # funtion from exercise lab 7 (yesterday)
+
 
 def email_read(filename, email):
     count_email = 0

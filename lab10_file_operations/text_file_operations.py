@@ -3,9 +3,11 @@ Damion Ally
 10/17/2025
 lab 10
 """
+
 import unittest
 import os
 from file_operations import read_file, write_file, append_file, email_read
+
 
 class TestFileOperations(unittest.TestCase):
     def setUp(self):
@@ -16,7 +18,7 @@ class TestFileOperations(unittest.TestCase):
         # remove the test file after each test
         if os.path.exists(self.filename):
             os.remove(self.filename)
-    
+
     def test_write_file(self):
         # test writing text to a file
         msg = "Damion Ally"
@@ -28,7 +30,7 @@ class TestFileOperations(unittest.TestCase):
         with open(self.filename, "r") as f:
             result = f.read()
 
-        self.assertEqual(result,msg)
+        self.assertEqual(result, msg)
 
     def test_read_file(self):
         # test reading text from a file
@@ -86,7 +88,8 @@ class TestFileOperations(unittest.TestCase):
 
         # Ensure no error occurs when reading a valid file
         self.assertIsInstance(gmail_count, int)
-            
+
+
 # run the unit tests automatically when the file is run
 if __name__ == "__main__":
     unittest.main()

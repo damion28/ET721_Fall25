@@ -3,13 +3,10 @@ Damion Ally
 lab 4, dictionary and cuntions
 Sep 10, 2025
 """
+
 print("\n---- Example 1: dictionary ----\n")
 # contact dictionary with three different users
-contacts = {
-    "Bill" : "718-111-222",
-    "Martha" : "646-000-3333",
-    "Peter" : "212-000-1111"
-}
+contacts = {"Bill": "718-111-222", "Martha": "646-000-3333", "Peter": "212-000-1111"}
 print(contacts)
 
 # save the value of a specific key
@@ -53,7 +50,7 @@ print(contacts)
 
 print("\n---- Example 6: add a new key:value pair in a dictionary ----\n")
 print(contacts)
-contacts.update({"Lucas":"212-111-1111"})
+contacts.update({"Lucas": "212-111-1111"})
 print(contacts)
 
 print("\n---- Example 7: return items, keys, and values in a dictionary ----\n")
@@ -78,7 +75,15 @@ for word in word_count_dict:
     print(f"'{word}' appears {word_count_dict[word]}")
 
 print("\n---- Exercise ----\n")
-users = ["peterpan@yahoo.com","annie@hotmail.com","Carl@hotmail.com","martha@gmail.com","cassie@yahoo.com","Josue@hotmail.com","John@hotmail.com"]
+users = [
+    "peterpan@yahoo.com",
+    "annie@hotmail.com",
+    "Carl@hotmail.com",
+    "martha@gmail.com",
+    "cassie@yahoo.com",
+    "Josue@hotmail.com",
+    "John@hotmail.com",
+]
 
 email_count = {"gmail": 0, "hotmail": 0, "yahoo": 0}
 

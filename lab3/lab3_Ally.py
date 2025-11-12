@@ -3,6 +3,7 @@ Damion Ally
 Lab 3, Python conditional statement and loops
 Sep 8, 2025
 """
+
 # conditional statement
 print("\n---- Example 1: if, elif,..., else ----")
 """
@@ -18,20 +19,20 @@ user_number = int(input("Guess a number: "))
 
 attempt = 1
 
-while user_number<1 or user_number>9:
+while user_number < 1 or user_number > 9:
     user_number = int(input("ERROR! Guess a number: "))
     attempt += 1
 
-    if attempt>2:
+    if attempt > 2:
         print("No more attempts")
         break
 
     # compare
-    elif(user_number == GUESS_NUM):
+    elif user_number == GUESS_NUM:
         print(f"Great job! {user_number} is the guessed number")
-    elif(user_number>GUESS_NUM):
+    elif user_number > GUESS_NUM:
         print(f"{user_number} should be lower")
-    elif(user_number<GUESS_NUM):
+    elif user_number < GUESS_NUM:
         print(f"{user_number} should be higher")
     else:
         print(f"ERROR!")
@@ -51,11 +52,11 @@ example 2:
 """
 age_student = int(input("Enter an age: "))
 lunch = "None"
-if age_student<=9 and age_student>=5:
+if age_student <= 9 and age_student >= 5:
     lunch = "milk"
-elif age_student>=10 and age_student<=14:
+elif age_student >= 10 and age_student <= 14:
     lunch = "sandwich"
-elif age_student>=15 and age_student<=17:
+elif age_student >= 15 and age_student <= 17:
     lunch = "burger"
 else:
     lunch = "None"
@@ -64,7 +65,7 @@ print(f"At age {age_student} the food is {lunch}")
 
 print("\n --- Example 3: for loops as a counter----")
 # 'for' loop enables the program to execute a code block multiple times.
-for n in range(2,10):
+for n in range(2, 10):
     print(n)
 
 print("\n ---- Example 4: for loop in a list ----")
@@ -77,7 +78,7 @@ for index in range(len(years)):
 
 print("\n ---- Example 5: while loop as a counter ----")
 count = 1
-while count<=5:
+while count <= 5:
     print(count)
     count += 1
 
@@ -85,7 +86,7 @@ print("\n ---- Example 6: while loop to validate a number ----")
 # validate if a number is between -5 and 5 (inclusive)
 num = int(input("Enter a number between -5 and 5: "))
 # use a while to recollect if the num is not between -5 and 5
-while num<-5 or num>5:
+while num < -5 or num > 5:
     num = int(input("ERROR! Enter a number between -5 and 5: "))
 
 print(f"Entered number = {num}")

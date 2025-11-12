@@ -3,12 +3,13 @@ Damion ally
 Oct 22, 2025
 lab 11, APIs
 """
+
 import pandas as pd
 
 # -------------------------
 # 1. example dataframe
 # -------------------------
-dict_ = {'a':[11,21,31],'b':[12,22,32]}
+dict_ = {"a": [11, 21, 31], "b": [12, 22, 32]}
 
 # create a dataframe for dict_
 df = pd.DataFrame(dict_)
@@ -33,7 +34,7 @@ df_teams = pd.DataFrame(nba_teams)
 print(df_teams.head())
 
 # find the id of the warriors
-df_warrior = df_teams[df_teams["nickname"]== "Warriors"]
+df_warrior = df_teams[df_teams["nickname"] == "Warriors"]
 print(df_warrior)
 
 # find the id of the warriors using the information in the first column
@@ -67,17 +68,21 @@ print("\nGames data from pickle file:")
 print(games.head())
 
 # c. filter GGW vs Raptors
-warriors_vs_raptors = games[games['MATCHUP'].str.contains("TOR")]
+warriors_vs_raptors = games[games["MATCHUP"].str.contains("TOR")]
 
-gsw_home_vs_raptors = warriors_vs_raptors[warriors_vs_raptors["MATCHUP"].str.contains(" vs. ")]
+gsw_home_vs_raptors = warriors_vs_raptors[
+    warriors_vs_raptors["MATCHUP"].str.contains(" vs. ")
+]
 
-gsw_away_vs_raptors = warriors_vs_raptors[warriors_vs_raptors["MATCHUP"].str.contains(" @ ")]
+gsw_away_vs_raptors = warriors_vs_raptors[
+    warriors_vs_raptors["MATCHUP"].str.contains(" @ ")
+]
 
 # d. calculate averages
-home_avg_plus = gsw_home_vs_raptors['PLUS_MINUS'].mean()
-away_avg_plus = gsw_away_vs_raptors['PLUS_MINUS'].mean()
-home_avg_pts = gsw_home_vs_raptors['PTS'].mean()
-away_avg_pts = gsw_home_vs_raptors['PTS'].mean()
+home_avg_plus = gsw_home_vs_raptors["PLUS_MINUS"].mean()
+away_avg_plus = gsw_away_vs_raptors["PLUS_MINUS"].mean()
+home_avg_pts = gsw_home_vs_raptors["PTS"].mean()
+away_avg_pts = gsw_home_vs_raptors["PTS"].mean()
 
 print(f"\nWarriors home average {home_avg_plus}")
 print(f"\nWarriors away average {away_avg_plus}")
@@ -85,22 +90,34 @@ print(f"\nWarriors away average {away_avg_plus}")
 # e. visualization
 import matplotlib.pyplot as plt
 
-metrics = ["PLUS_MINUS" , 'PTS']
+metrics = ["PLUS_MINUS", "PTS"]
 home_values = [home_avg_plus, home_avg_pts]
 away_values = [away_avg_plus, away_avg_pts]
 
 x = range(len(metrics))
 bar_width = 0.35
 
-plt.figure(figsize=(8,5))
-plt.bar([i - bar_width/2 for i in x], home_values, width=bar_width, label = "Home", color = "skyblue")
-plt.bar([i + bar_width/2 for i in x], away_values, width=bar_width, label="Away", color="orange")
+plt.figure(figsize=(8, 5))
+plt.bar(
+    [i - bar_width / 2 for i in x],
+    home_values,
+    width=bar_width,
+    label="Home",
+    color="skyblue",
+)
+plt.bar(
+    [i + bar_width / 2 for i in x],
+    away_values,
+    width=bar_width,
+    label="Away",
+    color="orange",
+)
 
 plt.xticks(x, metrics)
 plt.title("Golden State Warriors vs. Raptors - Home vs Away comparison")
 plt.ylabel("Average Value")
 plt.legend()
-plt.grid(axis="y", linestyle = "--", alpha=0.7)
+plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
 plt.show()
 
