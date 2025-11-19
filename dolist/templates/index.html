@@ -11,10 +11,12 @@
     <main class="maincontainer">
         <h1 class="apptitle">To do list by Damion Ally</h1>
 
-        <form class="dolistform">
+        <form class="dolistform" action="{% url 'add' %}" method="post">
+            {% csrf_token %}
             <section class="formgroup">
                 <label for="task">What to do? ...</label>
-                <input type="text" id="task" class="todo_text" placeholder="Type your task"/>
+                {{form.text}}
+                
                 <button class="btnaddlist">Add to list</button>
             </section>
 
@@ -25,9 +27,22 @@
                 
             <section class="formgroup">
                 <h3>Added to the list:</h3>
-                <ul class="dolist_list">
-                    <li>Complete lab 15</li>
-                </ul>
+
+                    <!-- LIST DISPLAY -->
+                    <ul class="dolist_list">
+                        <!-- synch from database -->
+                        {% for task in todo_tasks %}
+                        {% if task.completed%}
+                            <li class="listitem">{{task.text}}</li>
+                        {%else%}
+                        <a href="#" class="linkitem"><li class="listitem"> {{task.text}}</li></a>
+                        {%endif%}
+                        {% endfor %}
+                        <li class="listitem">Complete lab 15</li>
+                        <li class="listitem completed">Testing completed</li>
+
+                    </ul>
+                    
             </section>            
         </form>
 
