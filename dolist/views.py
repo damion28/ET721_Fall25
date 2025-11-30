@@ -13,11 +13,11 @@ def index(request):
 @require_POST
 def addTodoitem(request):
     form = Todolisform(request.POST)
-    print(request.POST['text']) # testing
+    
 
-    #capture data from the form when the Add to list button is pressed
+    # capture data from the form when the 'Add to list' button is pressed
     if form.is_valid():
-        new_todo = Todolisform(text = request.POST['text'])
-        new_todo.save()
+        text = form.cleaned_clear['text'] # get the submitted text
+        Todolist.objects.create(text=text) # save to the database
         
     return redirect('index')
