@@ -21,8 +21,8 @@
             </section>
 
             <section class="formgroup">
-                <button class="btndeleteeach">DELETE COMPLETED</button>
-                <button class="btndeleteall">DELETE ALL</button>
+                <a href="{% url 'deletecompleted' %}" class=""btndeleteeach">DELETE COMPLETED</a>
+                <a href = "{% url 'deleteall' %}" class="btndeleteall">DELETE ALL</a>
             </section>
                 
             <section class="formgroup">
@@ -34,8 +34,8 @@
                         {% for task in todo_tasks %}
                         {% if task.completed%}
                             <li class="listitem">{{task.text}}</li>
-                            {%else%}
-                            <a href="#" class="linkitem"><li class="listitem"> {{task.text}}</li></a>
+                        {%else%}
+                            <a href="{% url 'completed' task.id %}" class="linkitem"><li class="listitem"> {{task.text}}</li></a>
                         {%endif%}
                         {% endfor %}
 

@@ -24,9 +24,17 @@ img{width: 100%; display: block;}
 }
 .btndeleteeach{
     background-color: orange;
+    text-align: center;
+    color: aliceblue;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 .btndeleteall{
-    background-color: rgb(248, 138, 3);
+    background-color: orange;
+    text-align: center;
+    color: aliceblue;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 .btndeleteeach:hover, .btndeleteall:hover, .btnaddlist:hover{
     background: darkred;
