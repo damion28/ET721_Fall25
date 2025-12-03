@@ -7,5 +7,5 @@ class Todolisform(forms.Form):
             'placeholder': 'Enter to do...',
             'aria-label': 'Todo',
             'aria-describedby': 'add-btn'
-        })
-    )
+        }
+    ))

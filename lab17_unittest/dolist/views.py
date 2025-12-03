@@ -21,3 +21,20 @@ def addTodoitem(request):
         Todolist.objects.create(text=text) # save to the database
         
     return redirect('index')
+
+# function to select an item as completed
+def completedTodo(request, todo_id):
+    todo = Todolist.objects.get(pk = todo_id)
+    todo.completed = True
+    todo.save()
+    return redirect('index')
+
+# function to delete all items that are marked as 'completed'
+def deletecompleted(request):
+    Todolist.objects.filter(completed__exact = True).delete()
+    return redirect('index')
+
+# function to delete all tasks in our list
+def deleteAll(request):
+    Todolist.objects.all().delete()
+    return redirect('index')
