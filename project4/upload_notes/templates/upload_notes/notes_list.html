@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Notes</h2>
+<a class="button" href="{% url 'note_upload' %}">Upload New Note</a>
+
+<ul>
+    {% for note in notes %}
+        <li>
+            <strong>{{ note.title }}</strong>
+            <br>
+            <img src="{{ note.image.url }}" alt="{{ note.title }}">
+        </li>
+    {% empty %}
+        <li>No notes uploaded yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

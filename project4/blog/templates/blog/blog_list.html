@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Blogs</h2>
+<a class="button" href="{% url 'blog_create' %}">Write New Blog</a>
+
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a> by {{ post.author.username }} 
+            ({{ post.created_at|date:"M d, Y" }})
+        </li>
+    {% empty %}
+        <li>No blogs yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}
